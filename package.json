@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "slidev slidevの使い方/slides.md --open",
     "build": "slidev build slidevの使い方/slides.md --base /slidev---/",
-    "build:local": "slidev build slidevの使い方/slides.md --out dist",
+    "build:local": "slidev build slidevの使い方/slides.md --out ./dist",
     "export": "slidev export slidevの使い方/slides.md",
     "deploy": "npm run build && npx gh-pages -d slidevの使い方/dist"
   },
