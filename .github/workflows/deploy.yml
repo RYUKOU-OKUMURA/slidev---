@@ -25,18 +25,7 @@ jobs:
         run: npm install
         
       - name: Build
-        run: |
-          echo "Building Slidev..."
-          npm run build:local
-          echo "Build completed, checking output..."
-          ls -la
-          find . -name "*.html" -o -name "dist" -type d
-          echo "Contents of current directory:"
-          ls -la
-          if [ -d "slidevの使い方" ]; then
-            echo "Contents of slidevの使い方:"
-            ls -la "slidevの使い方/"
-          fi
+        run: npm run build:local
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
