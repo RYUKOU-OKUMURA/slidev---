@@ -1,0 +1,17 @@
+{
+  "name": "slidev-test",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "slidev slidevの使い方/slides.md --open",
+    "build": "slidev build slidevの使い方/slides.md",
+    "export": "slidev export slidevの使い方/slides.md"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.49.0",
+    "@slidev/theme-default": "latest"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.52.0"
+  }
+}
