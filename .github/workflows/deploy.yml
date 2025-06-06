@@ -25,27 +25,23 @@ jobs:
         run: npm install
         
       - name: Build
-        run: npm run build:local
-        
-      - name: Check build output
         run: |
-          echo "Checking for dist folder..."
+          echo "Building Slidev..."
+          npm run build:local
+          echo "Build completed, checking output..."
           ls -la
-          if [ -d "dist" ]; then
-            echo "dist folder found at root"
-            ls -la dist/
-          elif [ -d "slidevの使い方/dist" ]; then
-            echo "dist folder found in slidevの使い方/"
-            ls -la "slidevの使い方/dist/"
-          else
-            echo "No dist folder found, searching..."
-            find . -name "dist" -type d
+          find . -name "*.html" -o -name "dist" -type d
+          echo "Contents of current directory:"
+          ls -la
+          if [ -d "slidevの使い方" ]; then
+            echo "Contents of slidevの使い方:"
+            ls -la "slidevの使い方/"
           fi
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: slidevの使い方/dist
 
   deploy:
     environment:
